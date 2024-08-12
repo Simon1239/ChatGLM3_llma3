@@ -26,7 +26,6 @@ class DatasetLoader(Dataset):
     def __getitem__(self, index):
         image_path, label = self.data[index]['image:FILE'], self.data[index]['category']
         image = self.preprocess_image(image_path)
-        label = self.data[index][1]
         return image, int(label)
     
     def __len__(self):
